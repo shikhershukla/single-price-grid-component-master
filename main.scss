@@ -1,0 +1,118 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+}
+
+$shadow: 0px 0px 24px 0px rgba(0,0,0,0.2);
+
+body {
+  font-family: "Kerla", sans-serif;
+  box-sizing: border-box;
+  letter-spacing: 0.05em;
+}
+
+.container {
+  height: 98vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(204, 43%, 93%);
+  text-align: center;
+}
+
+h5 {
+  font-size: 1.2em;
+  padding-bottom: 1rem;
+  color: hsl(204, 43%, 93%);
+}
+
+p {
+  line-height: 1.4;
+  color: hsl(204, 43%, 93%);
+  font-weight: 400;
+}
+
+.content {
+  width: 80%;
+  max-width: 50rem;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: $shadow;
+  &__box1 {
+    background-color: white;
+    text-align: left;
+    padding: 2.5rem 3rem;
+    h1 {
+      font-size: 1.7rem;
+      padding-bottom: 1.5rem;
+      color: hsl(179, 62%, 43%);
+    }
+    h5 {
+      color: hsl(71, 73%, 54%);
+    }
+    p {
+      color: hsl(204, 12%, 76%);
+    }
+  }
+  &__box2 {
+    display: flex;
+    text-align: left;
+    &--b1 {
+      background-color: hsl(179, 62%, 43%);
+      flex-basis: 50%;
+      padding: 2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      p {
+        span {
+          font-size: 2rem;
+          font-weight: 700;
+        }
+      }
+      button{
+          width: 100%;
+          padding: 1rem 2rem;
+          margin-top: 1.5rem;
+          border-radius: .5rem;
+          background-color: hsl(71, 73%, 54%);;
+          border: none;
+          font-size: 1rem;
+          color: hsl(204, 43%, 93%);
+          box-shadow: $shadow;
+      }
+    }
+    &--b2 {
+      background-color: hsl(177, 59%, 53%);
+      flex-basis: 50%;
+      padding: 2rem 2rem;
+    }
+  }
+}
+
+@media (max-width: 650px){
+    .container {
+        justify-content: unset;
+        height: 80%;
+    }
+    .content{
+        margin: 2rem auto;
+        &__box2{
+            flex-direction: column;
+        }
+    }
+}
+
+@media (max-width: 450px){
+    :root {
+        font-size: 70%;
+    }
+}
+
